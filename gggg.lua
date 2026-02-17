@@ -412,6 +412,135 @@ ESPStatusLabel.TextSize = 10
 ESPStatusLabel.TextXAlignment = Enum.TextXAlignment.Center
 ESPStatusLabel.Parent = ESPFrame
 
+-- ========== SPEED BOOSTER FRAME (ADDITIONAL UI) ==========
+local BoosterFrame = Instance.new("Frame")
+BoosterFrame.Name = "BoosterFrame"
+BoosterFrame.Size = UDim2.new(0, 200, 0, 140)
+BoosterFrame.Position = UDim2.new(0, 20, 0, 20)
+BoosterFrame.BackgroundColor3 = Color3.new(0, 0, 0)
+BoosterFrame.BackgroundTransparency = 0.2
+BoosterFrame.BorderSizePixel = 0
+BoosterFrame.Parent = ScreenGui
+
+local BoosterCorner = Instance.new("UICorner", BoosterFrame)
+BoosterCorner.CornerRadius = UDim.new(0, 8)
+
+local Stroke = Instance.new("UIStroke", BoosterFrame)
+Stroke.Color = Color3.new(0, 1, 0)
+Stroke.Thickness = 2
+Stroke.Transparency = 0.3
+
+-- Booster Title
+local BoosterTitle = Instance.new("TextLabel")
+BoosterTitle.Size = UDim2.new(1, -20, 0, 20)
+BoosterTitle.Position = UDim2.new(0, 10, 0, 5)
+BoosterTitle.BackgroundTransparency = 1
+BoosterTitle.Text = "Speed Booster"
+BoosterTitle.TextColor3 = Color3.new(0, 1, 0)
+BoosterTitle.Font = Enum.Font.GothamBold
+BoosterTitle.TextSize = 14
+BoosterTitle.TextXAlignment = Enum.TextXAlignment.Left
+BoosterTitle.Parent = BoosterFrame
+
+-- Speed Value Box
+local SpeedBoxLabel = Instance.new("TextLabel")
+SpeedBoxLabel.Size = UDim2.new(0, 60, 0, 15)
+SpeedBoxLabel.Position = UDim2.new(0, 10, 0, 30)
+SpeedBoxLabel.BackgroundTransparency = 1
+SpeedBoxLabel.Text = "Speed:"
+SpeedBoxLabel.TextColor3 = Color3.new(1, 1, 1)
+SpeedBoxLabel.Font = Enum.Font.Gotham
+SpeedBoxLabel.TextSize = 12
+SpeedBoxLabel.Parent = BoosterFrame
+
+local SpeedBox = Instance.new("TextBox")
+SpeedBox.Size = UDim2.new(0, 80, 0, 20)
+SpeedBox.Position = UDim2.new(0, 75, 0, 28)
+SpeedBox.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+SpeedBox.TextColor3 = Color3.new(1, 1, 1)
+SpeedBox.Text = "28.8"
+SpeedBox.Font = Enum.Font.Gotham
+SpeedBox.TextSize = 12
+SpeedBox.Parent = BoosterFrame
+
+local SpeedBoxStroke = Instance.new("UIStroke", SpeedBox)
+SpeedBoxStroke.Color = Color3.new(1, 0, 0)
+SpeedBoxStroke.Thickness = 2
+
+Instance.new("UICorner", SpeedBox).CornerRadius = UDim.new(0, 6)
+
+-- Jump Value Box
+local JumpBoxLabel = Instance.new("TextLabel")
+JumpBoxLabel.Size = UDim2.new(0, 60, 0, 15)
+JumpBoxLabel.Position = UDim2.new(0, 10, 0, 55)
+JumpBoxLabel.BackgroundTransparency = 1
+JumpBoxLabel.Text = "Jump:"
+JumpBoxLabel.TextColor3 = Color3.new(1, 1, 1)
+JumpBoxLabel.Font = Enum.Font.Gotham
+JumpBoxLabel.TextSize = 12
+JumpBoxLabel.Parent = BoosterFrame
+
+local JumpBox = Instance.new("TextBox")
+JumpBox.Size = UDim2.new(0, 80, 0, 20)
+JumpBox.Position = UDim2.new(0, 75, 0, 53)
+JumpBox.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+JumpBox.TextColor3 = Color3.new(1, 1, 1)
+JumpBox.Text = "35"
+JumpBox.Font = Enum.Font.Gotham
+JumpBox.TextSize = 12
+JumpBox.Parent = BoosterFrame
+
+local JumpBoxStroke = Instance.new("UIStroke", JumpBox)
+JumpBoxStroke.Color = Color3.new(1, 0, 0)
+JumpBoxStroke.Thickness = 2
+
+Instance.new("UICorner", JumpBox).CornerRadius = UDim.new(0, 6)
+
+-- Toggle Button
+local ToggleButton = Instance.new("TextButton")
+ToggleButton.Name = "BoosterToggle"
+ToggleButton.Size = UDim2.new(0, 40, 0, 16)
+ToggleButton.Position = UDim2.new(1, -50, 0, 8)
+ToggleButton.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+ToggleButton.Text = ""
+ToggleButton.AutoButtonColor = false
+ToggleButton.Parent = BoosterFrame
+
+local ToggleCorner = Instance.new("UICorner", ToggleButton)
+ToggleCorner.CornerRadius = UDim.new(0, 8)
+
+-- Toggle Background
+local ToggleBackground = Instance.new("Frame", ToggleButton)
+ToggleBackground.Size = UDim2.new(1, 0, 1, 0)
+ToggleBackground.BackgroundColor3 = Color3.new(0.8, 0, 0)
+ToggleBackground.BackgroundTransparency = 0.3
+ToggleBackground.ZIndex = 0
+Instance.new("UICorner", ToggleBackground).CornerRadius = UDim.new(0, 8)
+
+-- Toggle Knob
+local Knob = Instance.new("Frame", ToggleButton)
+Knob.Name = "ToggleKnob"
+Knob.Size = UDim2.new(0, 12, 0, 12)
+Knob.Position = UDim2.new(0, 2, 0.5, 0)
+Knob.AnchorPoint = Vector2.new(0, 0.5)
+Knob.BackgroundColor3 = Color3.new(1, 1, 1)
+Knob.ZIndex = 2
+Knob.Parent = ToggleButton
+
+local KnobCorner = Instance.new("UICorner", Knob)
+KnobCorner.CornerRadius = UDim.new(0, 6)
+
+-- Status Label
+local StatusLabel = Instance.new("TextLabel")
+StatusLabel.Size = UDim2.new(0, 40, 0, 12)
+StatusLabel.Position = UDim2.new(1, -50, 0, 26)
+StatusLabel.BackgroundTransparency = 1
+StatusLabel.Text = "OFF"
+StatusLabel.TextColor3 = Color3.new(1, 0, 0)
+StatusLabel.Font = Enum.Font.GothamBold
+StatusLabel.TextSize = 10
+StatusLabel.TextXAlignment = Enum.TextXAlignment.Center
+StatusLabel.Parent = BoosterFrame
 
 -- ========== DRAGGING FUNCTIONALITY ==========
 local draggingSpammer = false
@@ -709,6 +838,48 @@ ESPFrame.MouseLeave:Connect(function()
     TweenService:Create(ESPStroke, TweenInfo.new(0.2), { Transparency = 0.3 }):Play()
 end)
 
+-- ========== PLOT TIMER ESP ==========
+local BaseESPs = {}
+local Plots = workspace:FindFirstChild("Plots")
+
+if Plots then
+    RunService.RenderStepped:Connect(function()
+        for _, plot in ipairs(Plots:GetChildren()) do
+            local purchases = plot:FindFirstChild("Purchases")
+            local plotBlock = purchases and purchases:FindFirstChild("PlotBlock")
+            local main = plotBlock and plotBlock:FindFirstChild("Main")
+
+            local timerGui = main and main:FindFirstChild("BillboardGui")
+            local timerText = timerGui and timerGui:FindFirstChild("RemainingTime")
+
+            if main and timerText and timerText.Text ~= "" then
+                if not BaseESPs[plot] then
+                    local gui = Instance.new("BillboardGui")
+                    gui.Size = UDim2.new(0, 140, 0, 35)
+                    gui.StudsOffset = Vector3.new(0, 5, 0)
+                    gui.AlwaysOnTop = true
+                    gui.Adornee = main
+                    gui.Parent = main
+
+                    local text = Instance.new("TextLabel", gui)
+                    text.Size = UDim2.fromScale(1, 1)
+                    text.BackgroundTransparency = 1
+                    text.TextScaled = true
+                    text.Font = Enum.Font.GothamBlack
+                    text.TextColor3 = Color3.new(1, 1, 1)
+                    text.TextStrokeTransparency = 0
+                    text.TextStrokeColor3 = Color3.new(0, 0, 0)
+
+                    BaseESPs[plot] = gui
+                end
+                BaseESPs[plot].TextLabel.Text = timerText.Text
+            elseif BaseESPs[plot] then
+                BaseESPs[plot]:Destroy()
+                BaseESPs[plot] = nil
+            end
+        end
+    end)
+end
 
 print("✅ MLML673 HUB - Combined script loaded successfully!")
 print("📦 Features: Speed Booster + FPS Devour + AP Spammer + ESP System")
